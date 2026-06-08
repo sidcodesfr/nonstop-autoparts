@@ -1,0 +1,31 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addToCartButtons = document.querySelectorAll(".btn");
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent link navigation if <a>
+
+      const productCard = button.closest(".product-card");
+      const product = {
+        id: productCard.dataset.id,
+        name: productCard.dataset.name,
+        price: parseFloat(productCard.dataset.price),
+        image: productCard.dataset.image,
+        qty: 1
+      };
+
+      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
+      if (existingItemIndex !== -1) {
+        cartItems[existingItemIndex].qty += 1;
+      } else {
+        cartItems.push(product);
+      }
+
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      window.location.href = "testcart.html"; // Redirect to cart page
+    });
+  });
+});
