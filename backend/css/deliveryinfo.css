@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top-contact-bar {
+    background-color: #a9a9a9;
+    color: #000000;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    height: 60px;
+}
+
+.main-menu {
+    background-color: #d13131;
+    color: #000000;
+    padding: 10px 40px; /* Keep this padding for overall space from screen edges */
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+}
+
+/* Logo - no special margin-left needed here, it naturally starts left due to parent padding */
+.main-menu > img {
+    height: 80px;
+    width: auto;
+    flex-shrink: 0;
+    margin-right: 60px; /* Adjust this value to control closeness to nav links */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Space between the individual nav links (Home, Products, etc.) */
+    align-items: center;
+    margin-left: auto; /* Pushes nav-links and nav-icons away from the logo */
+    margin-right: auto; /* Pushes nav-links away from nav-icons (making nav-links truly centered) */
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 10px 0; /* Add vertical padding for better hover area */
+    transition: color 0.3s ease;
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 10px 15px; /* Vertical 10px, Horizontal 15px */
+    transition: color 0.3s ease;
+}
+
+.nav-links a[href="homepage.html"] { /* This targets only the 'Home' link */
+    margin-right: -5px; /* Adjust this value (e.g., -5px to -15px) to control how much closer Products comes to Home. A negative margin counteracts part of the 30px gap. */
+}
+
+.nav-links a:hover {
+    color: #f3eded;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 30px; /* Space between the user profile and cart icons */
+    align-items: center;
+    /* No margin-right needed here, as nav-links' margin-right: auto pushes it to the right */
+}
+
+.nav-icons img {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.delivery-info {
+    text-align: center; /* Centers all text content inside the intro div */
+    padding: 10px 20px; /* Generous top/bottom padding, decent side padding */
+    background-color: #ab1919; /* A very light off-white for a subtle background */
+    color: #333; /* Dark grey for good readability */
+    line-height: 1.6; /* Improves readability for paragraphs */
+    height: 125%
+}
+
+.delivery-info h1 {
+    font-family: 'Roboto', sans-serif; /* A classic, elegant serif font */
+    font-size: 3em; /* Larger, impactful heading */
+    color: #000000; /* Slightly darker than body text for emphasis */
+    margin-bottom: 25px; /* Space below the heading */
+    letter-spacing: 0.02em; /* Slightly increased letter spacing for refinement */
+}
+
+.delivery-info p {
+    font-family: 'Roboto', sans-serif; /* A clean, modern sans-serif for body text */
+    font-size: 1.2em; /* Good, readable paragraph font size */
+    max-width: 900px; /* Constrains the width of the paragraph for better readability on wide screens */
+    margin: 0 auto; /* Centers the paragraph block itself within the intro div */
+    color: #000000; /* Slightly lighter text color for body, good contrast */
+}
+
+.dropdown {
+    position: relative;
+display: flex;
+align-items: center;
+height: 100%;
+width: fit-content; 
+padding: 0;
+}
+
+/* The dropdown trigger button/link */
+.dropbtn {
+    /* Inherits general .nav-links a styles, or customize here */
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px; /* Keep consistent padding */
+    white-space: nowrap;
+    /* If you used a <button> tag, you'd add: border: none; background: transparent; cursor: pointer; */
+}
+
+.dropbtn:hover {
+    color: #f3eded; /* Hover effect for the trigger button */
+}
+
+/* Dropdown Content (the actual menu that appears) */
+.dropdown-content {
+    display: none; /* HIDDEN by default */
+    position: absolute; /* CRUCIAL: Positions it relative to its .dropdown parent */
+    background-color: #f9f9f9; /* Light background for dropdown menu */
+    min-width: 180px; /* Adjust width as needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Soft shadow for depth */
+    z-index: 1; /* Ensures it appears above other content */
+    left: 50%; /* Center the dropdown horizontally relative to its parent */
+    transform: translateX(-50%); /* Adjust to truly center it */
+    top: calc(100% + 5px); /* Position it slightly below the dropbtn (100% of parent height + 5px gap) */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Ensures content respects rounded corners */
+    opacity: 0; /* Start fully transparent for smooth fade-in */
+    visibility: hidden; /* Hide from screen readers when not visible */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition effects */
+}
+
+/* Links inside the dropdown content */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Makes each link take full width */
+    text-align: center; /* Align text to the left within the dropdown */
+    font-size: 0.95em; /* Slightly smaller font for dropdown items */
+    white-space: nowrap; /* Prevent links from wrapping */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #d13131; /* Highlight with your theme color */
+    color: white; /* White text on hover */
+}
+
+/* Show the dropdown menu on hover over the .dropdown container */
+.dropdown:hover .dropdown-content {
+    display: block; /* Make it visible */
+    opacity: 1; /* Fade it in */
+    visibility: visible; /* Make visible for screen readers */
+}
+.footerstyle {
+    font-family: 'Roboto', sans-serif;
+    background-color: #a9a9a9; /* Dark background, common for footers */
+    color: #030202; /* Light text for contrast */
+    text-align: center; /* Center the text */
+    padding: 20px 0; /* Add vertical padding */
+    font-size: 0.9em; /* Slightly smaller font size */
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05); /* Subtle shadow at the top */
+}

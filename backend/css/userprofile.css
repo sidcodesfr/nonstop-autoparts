@@ -1,0 +1,273 @@
+/* userprofile.css */
+
+.top-contact-bar {
+    background-color: #a9a9a9;
+    color: #000000;
+    padding: 12px 40px; /* Slightly increased padding */
+    font-size: 15px;     /* Increased font size for readability */
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 35px; /* Adjusted height */
+}
+
+.contact-info-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info-group img {
+    height: 20px; /* Slightly larger WhatsApp icon */
+    width: auto;
+    vertical-align: middle;
+}
+
+/* MAIN MENU */
+.main-menu {
+    background-color: #d13131;
+    color: #ffffff;
+    padding: 15px 40px; /* More space around content */
+    font-size: 15px; /* Uniform readable font size */
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 35px; /* Push down to align below contact bar */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: 40px; /* Taller for modern feel */
+}
+
+/* Logo */
+.main-menu > img {
+    margin-top: 25px;
+    height: 95px;
+    width: auto;
+    margin-right: 50px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-links a {
+    color: #141111;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 12px 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f5f5f5;
+}
+
+.nav-links a.active {
+    background-color: #a11a1a;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+/* NAV ICONS */
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    align-items: right;
+}
+
+.nav-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 30px;
+}
+
+.nav-icons button {
+    display: inline-block;
+    width: 36px;
+    height: 30px;
+}
+
+.nav-icons img {
+    height: 100%;
+    width: auto;
+    transition: filter 0.3s ease;
+}
+
+.nav-icons img:hover {
+    filter: brightness(0) invert(1); /* Turns icons white */
+}
+
+.nav-icons a.active img {
+  filter: brightness(0) invert(1);
+}
+
+/* SEARCH BAR */
+.search-bar {
+    background-color:  #a9a9a9;
+    padding: 6px 0; /* Reduced vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 75px; /* 35px + 40px */
+    left: 0;
+    width: 100%;
+    height: 40px; /* Slightly taller for better clickability */
+    z-index: 998;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Centered Search Container */
+.search-bar .search-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 550px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Sleek Input */
+.search-bar .search-container input {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    width: 70%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #000;
+    transition: border-color 0.2s ease;
+}
+
+.search-bar .search-container input:focus {
+    outline: none;
+    border-color: #d13131;
+}
+
+/* Sleek Search Button */
+.search-bar .search-container button {
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #d13131;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.search-bar .search-container button:hover {
+    transform: translateY(-2px); /* Lifts the button up */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Deeper shadow */
+}
+
+.search-container img {
+    height: 20px;
+    width: auto;
+    vertical-align: middle
+     /* Turns icons white */
+}
+
+.search-container img:hover {
+    filter: brightness(0) invert(1); /* Turns icons white */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 40px;
+  width: 100%;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #e53935;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+.user-details p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+}
+
+.user-details strong {
+  display: inline-block;
+  width: 120px;
+  color: #333;
+}
+
+.profile-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-actions button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #e53935;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.profile-actions button:hover {
+  background-color: #b72e2c;
+}
+

@@ -1,0 +1,103 @@
+div.container {
+    margin: 0 auto;
+    width: 500px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px; 
+}
+body {
+font-family: Arial, sans-serif;
+background-color: #f5f5f5;
+background-image: url('loginimage.jpeg'); /* IMPORTANT: Replace 'your-image.jpg' with the actual path to your image */
+background-size: cover; /* Ensures the image covers the entire viewport */
+background-repeat: no-repeat; /* Prevents the image from tiling */
+background-position: center; /* Centers the image */
+background-attachment: fixed;
+}
+
+h1 {
+text-align: center;
+color: #333;
+}
+
+.container {
+margin: 0 auto;
+width: 500px;
+border: 1px solid #ccc;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+padding: 20px;
+text-align: center;
+}
+#background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+padding: 10px;
+margin-bottom: 20px;
+width: 100%;
+box-sizing: border-box;
+border: 1px solid #100c0c;
+border-radius: 4px;
+}
+
+input[type="submit"] {
+background-color: #dd1e1e;
+color: #000000;
+padding: 10px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-family: 'Roboto', sans-serif;
+font-size: 16px;
+}
+
+.home-button {
+    background-color: #dd1e1e; /* Use your main menu's background color */
+    color: #000000; /* White text for contrast on red background */
+    padding: 10px 20px; /* Adjust padding to make it look like a button */
+    border: none; /* Remove any default link borders */
+    border-radius: 5px; /* Add some rounding to the corners */
+    text-decoration: none; /* Ensure no underline */
+    cursor: pointer; /* Show pointer on hover */
+    display: inline-block; /* Allows padding and other box model properties */
+    text-align: center; /* Centers the text within the button */
+    white-space: nowrap; /* Prevents text from wrapping */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+        
+input[type="submit"]:hover {
+color: #ffffff;
+}
+
+a {
+display: block;
+margin-top: 20px;
+text-align: center;
+color: #333;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}

@@ -1,0 +1,201 @@
+body {
+    background-image: url('loginimage.jpeg'); /* IMPORTANT: Replace 'your-image.jpg' with the actual path to your image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed;
+    display: flex; /* Makes body a flex container */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    min-height: 100vh; /* Ensures body takes full viewport height */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    font-family: 'Roboto', sans-serif; /* Set a default font family for the body */
+}
+
+/* Removed .container as it conflicts with the new .login-container and existing form styles */
+
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px; /* Consistent border-radius for the main container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit the container width for better aesthetics */
+    text-align: center; /* Center text within the container (like h1) */
+    border: 1px solid #ccc; /* Added border consistent with .container you had */
+}
+
+form {
+    padding-top: 30px; /* Corrected to 'px' unit */
+    width: 100%; /* Make form fill its parent container */
+    margin: 0 auto; /* Keep it centered if parent is larger */
+    background: #fff; /* Explicitly set background */
+    padding: 20px 0; /* Adjust padding as parent .login-container already has padding */
+    border-radius: 5px;
+    box-shadow: none; /* Removed shadow here as .login-container has it */
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border: none; /* Removed border here as .login-container has it */
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #333; /* Default dark color for headings */
+    margin-bottom: 25px; /* Space below the heading */
+    font-size: 2em; /* Ensure heading is prominent */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left; /* Labels align left */
+    color: #555; /* Default label color */
+    font-weight: bold; /* Labels are bold */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px); /* Adjusted width to account for padding and border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #170f0f; /* Darker border color */
+    border-radius: 3px;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    font-size: 1em; /* Consistent font size */
+}
+
+input[type="submit"] {
+    width: 100%; /* Make submit button full width */
+    background-color: #e01313;
+    color: #040202; /* Very dark grey, almost black */
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold; /* Make the button text bold */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color on hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #b22929; /* Darker red on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.form-footer { /* New container for the home button and signup link */
+    margin-top: 25px; /* Space between the form and this footer section */
+    display: flex; /* Flex container for horizontal or vertical alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    gap: 15px; /* Space between the home button and signup link */
+}
+
+.home-button {
+    background-color: #dd1e1e;
+    color: #000000; /* Changed to white for better contrast on red */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block; /* Allows padding and other box model properties */
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Make home button full width */
+    box-sizing: border-box; /* Essential for full width with padding */
+    font-weight: bold; /* Make the button text bold */
+}
+
+.home-button:hover {
+    background-color: #b22929; /* Darker red on hover */
+    color: #ffffff; /* Keep white text on hover */
+}
+
+p {
+    text-align: center;
+    margin-top: 0; /* Removed this margin as it's handled by .form-footer gap */
+    color: #0c0404;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95em; /* Slightly smaller font for secondary text */
+}
+
+a {
+    color: #0a0505; /* Changed link color to match your theme red for consistency */
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold; /* Make the signup link bold */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* For the error message, assuming it's a direct child of body and not inside the container */
+body > p[style="color: red;"] {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    /* Consider giving it a specific class if you want more robust styling */
+}
+
+.redirect {
+    color:#000000;
+}
+
+.redirect:hover{
+    text-decoration: underline;
+}
+.engine-brakes {
+    background-color: #5c0f0f;
+    font-family: 'Roboto', sans-serif; /* A clean, modern sans-serif for body text */
+    font-size: 1.2em;
+    color: #fdfdfd;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 50px
+}
+
+.engine-brakes h1 {
+    /* No padding here in your original code, added for completeness */
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.suspension-steering {
+    background-color: #5c0f0f;
+    font-family: 'Roboto', sans-serif; /* A clean, modern sans-serif for body text */
+    font-size: 1.2em;
+    color: #fdfdfd;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.oil-filters {
+    background-color: #5c0f0f;
+    font-family: 'Roboto', sans-serif; /* A clean, modern sans-serif for body text */
+    font-size: 1.2em;
+    color: #fdfdfd;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.oil-filters a {
+    color: #e4e4e4;
+    text-decoration: none;
+    white-space: nowrap;
+}
