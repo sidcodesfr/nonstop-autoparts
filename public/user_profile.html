@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile | AutoParts</title>
+  <link rel="stylesheet" href="css/homepagestyle.css">
+  <link rel="stylesheet" href="css/userprofile.css">
+</head>
+<body style="background-color: #f4f4f4; font-family: 'Open Sans', sans-serif;">
+ <!-- Contact Bar -->
+  <div class="top-contact-bar">
+    <div class="contact-info-group">
+      <img src="images/whatsapplogo1.png" alt="WhatsApp">
+      <span>+971123456789</span>
+    </div>
+    <div class="contact-info-group">
+      <span>contact@example.com</span>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+   <img src="images/autopartslogo.png" alt="AutoParts Logo" class="logo">
+    <nav class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="engineparts.html">Engine Parts</a>
+      <a href="brakingsystems.html">Braking Systems</a>
+      <a href="suspensionsteering.html">Suspension & Steering</a>
+      <a href="lightingelectrical.html">Lighting & Electrical</a>
+      <a href="accessories.html">Accessories</a>
+    </nav>
+    <div class="nav-icons">
+          <a id="account-link" href="loginpagefinal.html">
+  <img src="images/myaccount.png" class="icon-myaccount" alt="My Account" >
+          </a>
+        <a id="logout-btn" href="#" style="display: none;">
+    <img src="images/logout.png" class="icon-logout" alt="Logout" title="Logout">
+  </a>
+      <a href="testcart.html">
+      <img src="images/shoppingcart.png.png" class="icon-shoppingcart" alt="Shopping Cart">
+      </a>
+    </div>
+  </div>
+
+<!-- Centered Search Bar -->
+<div class="search-bar">
+  <div class="search-container">
+    <input type="text" placeholder="Search for parts, brands, or categories...">
+    <button type="submit"><img src="images/magnifyingglass1.png"></button>
+  </div>
+</div>
+<div class="page-container">
+<div class="profile-wrapper">
+  <div class="profile-card">
+    <img src="images/usericon.png" alt="User Icon" class="profile-icon">
+    <h2>Welcome, <span id="firstName">User</span></h2>
+    <div class="user-details">
+      <p><strong>First Name:</strong> <span id="firstNameInfo"></span></p>
+      <p><strong>Last Name:</strong> <span id="lastNameInfo"></span></p>
+      <p><strong>Username:</strong> <span id="username"></span></p>
+      <p><strong>Registered Email:</strong><span id="email"></span></p>
+    </div>
+    <div class="profile-actions">
+      <button onclick="viewOrders()">View Orders</button>
+      <button onclick="changePassword()">Change Password</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<script src="js/session.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const response = await fetch('/auth/user', { credentials: 'include' });
+      if (response.ok) {
+        const user = await response.json();
+        document.getElementById('firstName').textContent = user.user_f_name;
+        document.getElementById('firstNameInfo').textContent = user.user_f_name;
+        document.getElementById('lastNameInfo').textContent = user.user_l_name;
+        document.getElementById('username').textContent = user.username;
+        document.getElementById('email').textContent = user.email;
+      } else {
+        window.location.href = 'loginpagefinal.html';
+      }
+    } catch (error) {
+      console.error('Error loading user data:', error);
+    }
+  });
+  function viewOrders() {
+    window.location.href = 'orders.html';
+  } 
+  function changePassword() {
+    window.location.href = 'change_password.html';
+  }
+  async function logout() {
+    const res = await fetch('/auth/logout', {
+      method: 'POST',
+      credentials: 'include'
+    });
+    if (res.ok) { 
+      window.location.href = 'loginpagefinal.html';
+    } else {
+      alert('Logout failed. Please try again.');
+    }
+  }
+  // Add loading state
+document.body.classList.add("loading");
+
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const response = await fetch('/auth/user', { credentials: 'include' });
+    document.body.classList.remove("loading");
+    if (response.ok) {  
+      const user = await response.json();
+      document.getElementById('firstName').textContent = user.user_f_name;
+      document.getElementById('firstNameInfo').textContent = user.user_f_name;
+      document.getElementById('lastNameInfo').textContent = user.user_l_name;
+      document.getElementById('username').textContent = user.username;
+      document.getElementById('email').textContent = user.email;
+    } else {
+      window.location.href = 'loginpagefinal.html';
+    }
+  } catch (error) {
+    console.error('Error loading user data:', error);
+    alert("Something went wrong while fetching user data.");
+    
+  }
+});
+</script>
+</body>
+</html>

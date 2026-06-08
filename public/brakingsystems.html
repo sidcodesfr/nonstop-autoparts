@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Braking Systems | AutoParts</title>
+  <link rel="stylesheet" href="css/homepagestyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: #eeeeee;">
+  
+  <!-- Contact Bar -->
+  <div class="top-contact-bar">
+    <div class="contact-info-group">
+      <img src="images/whatsapplogo1.png" alt="WhatsApp">
+      <span>+971123456789</span>
+    </div>
+    <div class="contact-info-group">
+      <span>contact@example.com</span>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+   <img src="images/autopartslogo.png" alt="AutoParts Logo" class="logo">
+    <nav class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="engineparts.html">Engine Parts</a>
+      <a href="brakingsystems.html" class="active">Braking Systems</a>
+      <a href="suspensionsteering.html">Suspension & Steering</a>
+      <a href="lightingelectrical.html">Lighting & Electrical</a>
+      <a href="accessories.html">Accessories</a>
+    </nav>
+    <div class="nav-icons">
+      <a id="account-link" href="loginpagefinal.html">
+  <img src="images/myaccount.png" class="icon-myaccount" alt="My Account">
+          </a>
+        <a id="logout-btn" href="#" style="display: none;">
+    <img src="images/logout.png" class="icon-logout" alt="Logout" title="Logout">
+  </a>
+      <a href="images/testcart.html">
+      <img src="images/shoppingcart.png.png" class="icon-shoppingcart" alt="Shopping Cart">
+      </a>
+    </div>
+  </div>
+
+<!-- Centered Search Bar -->
+<div class="search-bar">
+  <div class="search-container">
+    <input type="text" placeholder="Search for parts, brands, or categories...">
+    <button type="submit"><img src="images/magnifyingglass1.png"></button>
+  </div>
+</div>
+
+  <!-- Banner Section -->
+<div class="banner-wrapper">
+  <img src="images/fastcar2.jpg" alt="Braking Systems" class="engineparts-banner">
+  <div class="banner-text">
+    <h1>Braking Systems</h1>
+  </div>
+</div>
+
+  <div class="product-page-container">
+  <!-- Sidebar Filter -->
+  <aside class="sidebar-filter">
+    <h2>Filter Products</h2>
+
+    <!-- Brand Filter -->
+    <div class="filter-group">
+      <h3>Brand</h3>
+      <label><input type="checkbox" name="brand" value="Toyota"> Toyota </label>
+      <label><input type="checkbox" name="brand" value="Mercedes"> Mercedes </label>
+      <label><input type="checkbox" name="brand" value="Ford"> Ford </label>
+      <label><input type="checkbox" name="brand" value="Honda"> Honda</label>
+      <label><input type="checkbox" name="brand" value="Nissan"> Nissan </label>
+      <label><input type="checkbox" name="brand" value="Jeep"> Jeep </label>
+    </div>
+
+    <!-- Price Range Filter -->
+    <div class="filter-group">
+      <h3>Price (AED)</h3>
+      <input type="range" id="price-range" min="0" max="10000" step="50" value="10000" oninput="document.getElementById('price-value').innerText = this.value">
+      <p>Up to: <span id="price-value">10000</span> AED</p>
+    </div>
+
+    <button class="clear-filters" onclick="clearFilters()">Clear Filters</button>
+  </aside>
+
+  <div class="product-grid">
+      <div class="product-card" data-id="P013" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+        <a href="individualitem.html"><img src="images/bmwairfilter.jpeg" alt="Air Filter BMW"></a>
+        <a class="product-name" href="individualitem.html">Air Filter-BMW</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+    
+
+      <div class="product-card" data-id="P014" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/nissanwheelcup.jpg" alt="Wheel Cup Nissan"></a>
+        <a class="product-name" href="individualitem.html">Wheel Cup-Nissan</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+      <div class="product-card" data-id="P015" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mercedessparkplug.jpeg" alt="Spark Plug Mercedes"></a>
+       <a class="product-name" href="individualitem.html">Spark Plug-Mercedes</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+      <div class="product-card" data-id="P016" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/hondasparkplug.jpeg" alt="Spark Plug Honda"></a>
+        <a class="product-name" href="individualitem.html">Spark Plug-Honda</a>
+        <div class="product-name">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+      <div class="product-card" data-id="P017" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+        <div class="product-card" data-id="P018" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+        <div class="product-card" data-id="P019" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+        <div class="product-card" data-id="P020" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+        <div class="product-card" data-id="P021" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+    
+       <div class="product-card" data-id="P022" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+         <div class="product-card" data-id="P023" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+
+          <div class="product-card" data-id="P024" 
+     data-name="Mitsubishi Spark Plug" 
+     data-price="200" 
+     data-image="mitsubishisparkplug.jpg"
+     data-shipping="20">
+      <a href="individualitem.html"><img src="images/mitsubishisparkplug.jpg" alt="Spark Plug Mitsubishi"></a>
+      <a class="product-name" href="individualitem.html">Spark Plug-Mitsubishi</a>
+        <div class="product-price">200 AED</div>
+        <a class="btn" href="#">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+
+   <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">&raquo;</a>
+</div>
+
+  <!-- Footer Placeholder -->
+  <footer class="footerstyle">
+    <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>NonStop Cyber General</h3>
+      <p>Office 901, Sama Building<br>Al Barsha 1, Dubai, UAE</p>
+      <p>Email: info@autoparts.ae</p>
+      <p>Phone: +971 123 456 789</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/nonstop-cyber-general-trading-llc"><img src="images/linkedinicon1.png" alt="LinkedIn"></a>
+        <a href="https://www.instagram.com/nonstopcyber/"><img src="images/instaicon.png" alt="Instagram"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+  <div class="footer-bottom">
+    <p>&copy; 2025 NonStop Cyber General Trading. All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/add-to-cart.js"></script>
+<script src="js/session.js"></script>
+</body>
+</html>

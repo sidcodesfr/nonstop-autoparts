@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/individualitem.css">
+</head>
+<body style="background-color: #eeeeee;">
+
+  <!-- Contact Bar -->
+  <div class="top-contact-bar">
+    <div class="contact-info-group">
+      <img src="images/whatsapplogo1.png" alt="WhatsApp">
+      <span>+971123456789</span>
+    </div>
+    <div class="contact-info-group">
+      <span>contact@example.com</span>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+    <img src="images/autopartslogo.png" alt="AutoParts Logo" class="logo">
+    <nav class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="engineparts.html"> Engine Parts </a>
+      <a href="brakingsystems.html"> Braking Systems </a>
+      <a href="suspensionsteering.html">Suspension & Steering</a>
+      <a href="lightingelectrical.html">Lighting & Electrical</a>
+      <a href="accessories.html">Accessories</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="loginpagefinal.html">
+        <img src="images/myaccount.png" class="icon-myaccount" aria-label="My Account" alt="My Account">
+      </a>
+      <a href="testcart.html">
+        <img src="images/shoppingcart.png.png" class="icon-shoppingcart" aria-label="Shopping Cart" alt="Shopping Cart">
+      </a>
+    </div>
+  </div>
+
+  <!-- Centered Search Bar -->
+  <div class="search-bar">
+    <div class="search-container">
+      <input type="text" placeholder="Search for parts, brands, or categories...">
+      <button type="submit"><img src="images/magnifyingglass1.png"></button>
+    </div>
+  </div>
+
+  <!-- Product Card -->
+  <div class="product-card"
+       data-id="airfilter001"
+       data-name="Air Filter - BMW"
+       data-price="200"
+       data-image="bmwairfilter.jpeg">
+
+    <!-- Image Viewer -->
+    <div class="image-viewer">
+      <div class="main-image-wrapper">
+        <button class="arrow left" onclick="prevImage()">&#10094;</button>
+        <img id="main-image" src="images/bmwairfilter.jpeg" alt="Main Product Image">
+        <button class="arrow right" onclick="nextImage()">&#10095;</button>
+      </div>
+      <div class="thumbnail-grid" id="thumbnail-grid">
+        <img src="images/bmwairfilter.jpeg" onclick="setImage(0)">
+        <img src="images/bmwairfilter1.jpeg" onclick="setImage(1)">
+        <img src="images/bmwairfilter2.jpeg" onclick="setImage(2)">
+        <img src="images/bmwairfilter3.jpg" onclick="setImage(3)">
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2 class="product-title" id="ProductTitle">Air Filter - BMW</h2>
+
+      <div class="product-price" id="ProductPrice">200 AED</div>
+
+      <div class="quantity-cart-wrapper">
+    <label for="quantity">Quantity:</label>
+    <select id="quantity" name="quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <button class="btn-add-to-cart" id="addToCartBtn">Add to Cart</button>
+</div>
+
+      <div class="links-row">
+        <a href="deliveryinfo.html" class="delivery-link">View Delivery Policy</a>
+        <a href="javascript:history.back()" class="go-back-link">Go Back</a>
+      </div>
+
+      <!-- Description at Bottom -->
+      <div class="bottom-description">
+        <h3>Product Description</h3>
+        <p>
+          Enhance your BMW’s performance with our premium air filter designed to deliver optimal airflow and filtration efficiency. Constructed with high-quality materials, this air filter is engineered to trap dust, dirt, and other contaminants while maintaining maximum air intake to your engine. Perfect for both everyday driving and high-performance demands, it helps extend engine life, improve fuel economy, and boost acceleration response.
+        </p>
+        <p>
+          The filter features a durable, washable structure that ensures long-lasting use and cost savings over time. Its precision fit makes installation easy without any modifications. Whether you're replacing a worn-out filter or upgrading for better performance, this air filter is the ideal solution for BMW owners seeking both reliability and superior function.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+  <div class="section">
+      <h1>View More Products</h1>
+  </div>
+
+    <div class="product-grid">
+      
+      <div class="product-card">
+        <img src="https://i.imgur.com/kKyHdYJ.png" alt="Air Filter BMW">
+        <div class="product-type">FILTER</div>
+        <div class="product-name">Air Filter-BMW</div>
+        <div class="product-name"> 200 AED </div>
+        <a class="btn" href="#"> Add To Cart </a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/Mq6ECbg.png" alt="Wheel Cup Nissan">
+        <div class="product-type">STEERING WHEEL COVERS</div>
+        <div class="product-name">Wheel Cup-Nissan</div>
+        <div class="product-name"> 200 AED </div>
+        <a class="btn" href="#"> Add To Cart </a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/BmZxbTT.png" alt="Spark Plug Mercedes">
+        <div class="product-type">AUTOMOTIVE TOOLS & EQUIP...</div>
+        <div class="product-name">Spark Plug-Mercedes</div>
+        <div class="product-name"> 200 AED </div>
+        <a class="btn" href="#"> Add To Cart </a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/OdFHkNn.png" alt="Spark Plug Honda">
+        <div class="product-type">AUTOMOTIVE TOOLS & EQUIP...</div>
+        <div class="product-name">Spark Plug-Honda</div>
+        <div class="product-name"> 200 AED </div>
+        <a class="btn" href="#"> Add To Cart </a>
+      </div>
+
+    </div>
+  </div>
+  </div>
+<script src="product-detail.js"></script>
+<script src="slideshow.js"></script>
+<script src="add-to-cart-detail.js"></script>
+</body>
+
+<footer class="footerstyle">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>NonStop Cyber General</h3>
+      <p>Office 901, Sama Building<br>Al Barsha 1, Dubai, UAE</p>
+      <p>Email: info@autoparts.ae</p>
+      <p>Phone: +971 123 456 789</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/nonstop-cyber-general-trading-llc"><img src="linkedinicon1.png" alt="LinkedIn"></a>
+        <a href="https://www.instagram.com/nonstopcyber/"><img src="instaicon.png" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+ 
+  <hr>
+  <div class="footer-bottom">
+    <p>&copy; 2025 NonStop Cyber General Trading. All rights reserved.</p>
+  </div>
+</footer>
+</html>

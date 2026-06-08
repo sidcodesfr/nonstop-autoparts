@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login | AutoParts</title>
+  <link rel="stylesheet" href="loginstylefinal1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-card" id="admin-login-form">
+      <h1>Admin Login to AutoParts</h1>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <input type="submit" value="Login" class="btn-login" />
+
+      <div id="error-message" class="error-message" style="color: red; margin-top: 10px; display: none;"></div>
+
+      <div class="form-footer">
+        <a class="home-button" href="homepage.html">← Back to Home</a>
+      </div>
+    </form>
+  </div>
+
+<script>
+  function showError(message) {
+    const errorBox = document.getElementById('error-message');
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+  }
+
+  function clearError() {
+    const errorBox = document.getElementById('error-message');
+    errorBox.textContent = '';
+    errorBox.style.display = 'none';
+  }
+
+  async function handleAdminLogin(event) {
+    event.preventDefault();
+    clearError();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+
+    if (!username || !password) {
+      showError('Please enter both username and password.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password, role: 'admin' })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Redirect to CMS dashboard on successful admin login
+        window.location.href = data.redirect || 'cms_dashboard.html';
+      } else {
+        showError(data.error || 'Login failed. Please try again.');
+      }
+    } catch (err) {
+      showError('Server error. Please try again later.');
+      console.error('Admin login error:', err);
+    }
+  }
+
+  document.getElementById('admin-login-form').addEventListener('submit', handleAdminLogin);
+</script>
+</body>
+</html>

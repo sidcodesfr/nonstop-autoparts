@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup | AutoParts</title>
+  <link rel="stylesheet" href="css/signup1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="signup-container">
+  <form class="signup-card">
+  <h1>Create Your Account</h1>
+
+  <!-- Error Box -->
+  <div id="error-message" class="error-message hidden">
+    <span id="error-text"></span>
+    <button type="button" class="close-error" onclick="closeError()">×</button>
+  </div>
+  <!-- Success Box -->
+<div id="success-message" class="success-message hidden">
+  <span id="success-text"></span>
+  <button type="button" class="close-success" onclick="closeSuccess()">×</button>
+</div>
+
+  <div class="form-grid">
+    <div class="form-column">
+      <label for="first_name">First Name</label>
+      <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+    </div>
+
+    <div class="form-column">
+      <label for="last_name">Last Name</label>
+      <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter Email" required>
+
+      <label for="confirm_password">Confirm Password</label>
+      <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+    </div>
+  </div>
+ 
+  <input type="submit" value="Create Account" class="btn-signup">
+
+  <div class="form-footer">
+    <a class="home-button" href="homepage.html">← Back to Home</a>
+    <p><a class="redirect" href="loginpagefinal.html">Already have an account? <strong>Log in</strong></a></p>
+  </div>
+</form>
+  </div>
+<script>
+  // Show error box with message
+  function showError(message) {
+    const errorBox = document.getElementById('error-message');
+    const errorText = document.getElementById('error-text');
+    errorText.textContent = message;
+    errorBox.classList.remove('hidden');
+  }
+
+  // Hide error box
+  function closeError() {
+    document.getElementById('error-message').classList.add('hidden');
+  }
+
+  // Show success box with message
+  function showSuccess(message) {
+    const successBox = document.getElementById('success-message');
+    const successText = document.getElementById('success-text');
+    successText.textContent = message;
+    successBox.classList.remove('hidden');
+  }
+
+  // Hide success box
+  function closeSuccess() {
+    document.getElementById('success-message').classList.add('hidden');
+  }
+
+  // Validate password pattern and confirm password match
+  function validateForm(password, confirmPassword) {
+    const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{5,}$/;
+
+    if (!pattern.test(password)) {
+      showError("Password must be at least 5 characters long and include one uppercase, one lowercase, and one digit.");
+      return false;
+    }
+
+    if (password !== confirmPassword) {
+      showError("Passwords do not match.");
+      return false;
+    }
+
+    return true;
+  }
+
+  // Run after DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.signup-card');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+       
+      closeError();
+      closeSuccess();
+
+      // Get form values
+      const fname = document.getElementById('first_name').value.trim();
+      const lname = document.getElementById('last_name').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm_password').value;
+      const role = 'user'; // Always user role on signup
+
+      // Validate passwords before sending
+      if (!validateForm(password, confirmPassword)) {
+        return; // stop submission if invalid
+      }
+
+      try {
+        const response = await fetch('/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_f_name: fname, user_l_name: lname, username, email, password, role })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          showSuccess("✅ Account created successfully!");
+          setTimeout(() => {
+            window.location.href = 'loginpagefinal.html'; // redirect after 2 seconds
+          }, 2000);
+        } else {
+          showError(data.error || 'Signup failed');
+        }
+      } catch (err) {
+        showError('Something went wrong. Please try again later.');
+        console.error('Signup error:', err);
+      }
+    });
+  });
+</script>
+</body>
+</html>
+

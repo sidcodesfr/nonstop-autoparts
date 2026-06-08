@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+    <link rel="stylesheet" href="testslidestyle.css">
+</style>
+</head>
+<body>
+<div class="slideshow-container">
+
+  <!-- Slide 1 -->
+  <div class="slide fade">
+    <img src="samplebanner.jpeg" alt="Slide 1">
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide fade">
+    <img src="newbanner.jpg" alt="Slide 2">
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide fade">
+    <img src="deliveryimage.jpg" alt="Slide 3">
+  </div>
+
+  <!-- Navigation arrows -->
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <!-- Dots -->
+  <div class="dots-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].classList.add("active");
+
+  setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+function plusSlides(n) {
+  slideIndex += n - 1;
+  showSlides();
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+</script>
+</body>
+</html>

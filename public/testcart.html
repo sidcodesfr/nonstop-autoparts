@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+  <link rel="stylesheet" href="css/cart1.css">
+</head>
+<body>
+  <!-- Contact Bar -->
+  <div class="top-contact-bar">
+    <div class="contact-info-group">
+      <img src="images/whatsapplogo1.png" alt="WhatsApp">
+      <span>+971123456789</span>
+    </div>
+    <div class="contact-info-group">
+      <span>contact@example.com</span>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+    <img src="images/autopartslogo.png" alt="AutoParts Logo" class="logo">
+
+    <nav class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="engineparts.html">Engine Parts</a>
+      <a href="brakingsystems.html">Braking Systems</a>
+      <a href="suspensionsteering.html">Suspension & Steering</a>
+      <a href="lightingelectrical.html">Lighting & Electrical</a>
+      <a href="accessories.html">Accessories</a>
+    </nav>
+
+    <div class="nav-icons">
+      <a id="account-link" href="loginpagefinal.html">
+  <img src="images/myaccount.png" class="icon-myaccount" alt="My Account">
+          </a>
+        <a id="logout-btn" href="#" style="display: none;">
+    <img src="images/logout.png" class="icon-logout" alt="Logout" title="Logout">
+  </a>
+      <a href="shoppingcart.html" class="active">
+        <img src="images/shoppingcart.png.png" class="icon-shoppingcart" aria-label="Shopping Cart" alt="Shopping Cart">
+      </a>
+    </div>
+  </div>
+
+  <!-- Centered Search Bar -->
+  <div class="search-bar">
+    <div class="search-container">
+      <input type="text" placeholder="Search for parts, brands, or categories...">
+      <button type="submit"><img src="images/magnifyingglass1.png"></button>
+    </div>
+  </div>
+
+  <!-- Header space placeholder -->
+  <div class="header-space"></div>
+
+  <main class="cart-page">
+    <section class="cart-container">
+      <h2 class="cart-title"> Cart <span>(0 items)</span></h2>
+      <!-- JS will inject .cart-item elements here -->
+    </section>
+
+    <aside class="summary-section">
+      <h2>Order Summary</h2>
+      <div class="coupon-section">
+        <input type="text" placeholder="Coupon Code">
+        <button class="apply-btn">Apply</button>
+      </div>
+
+      <div class="summary-details">
+        <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">AED 0.00</span></div>
+        <div class="summary-row"><span>Shipping Fee</span><span id="summary-shipping">AED 0.00</span></div>
+        <div class="summary-row total"><span>Total (Inclusive of VAT)</span><span id="summary-total">AED 0.00</span></div>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Checkout</button>
+    </aside>
+  </main>
+
+  <script src="js/cart.js"></script>
+  <script src="js/session.js"></script>
+</body>
+</html>
+

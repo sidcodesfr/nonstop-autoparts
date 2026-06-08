@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart | AutoParts</title>
+  <link rel="stylesheet" href="homepagestyle.css" />
+</head>
+<body>
+
+    <!-- Contact Bar -->
+  <div class="top-contact-bar">
+    <div class="contact-info-group">
+      <img src="whatsapplogo1.png" alt="WhatsApp">
+      <span>+971123456789</span>
+    </div>
+    <div class="contact-info-group">
+      <span>contact@example.com</span>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+  <img src="autopartslogo.png" alt="AutoParts Logo" class="logo">
+
+    <nav class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="engineparts.html"> Engine Parts </a>
+      <a href="brakingsystems.html"> Braking Systems </a>
+      <a href="suspensionsteering.html">Suspension & Steering</a>
+      <a href="lightingelectrical.html">Lighting & Electrical</a>
+      <a href="accessories.html">Accessories</a>
+    </nav>
+
+    <div class="nav-icons">
+      <a href="loginpagefinal.html">
+        <img src="myaccount.png" class="icon-myaccount" aria-label="My Account" alt="My Account">
+      </a>
+      <a href="shoppingcart.html" class="active">
+        <img src="shoppingcart.png.png" class="icon-shoppingcart" aria-label="Shopping Cart" alt="Shopping Cart">
+      </a>
+    </div>
+  </div>
+
+<!-- Centered Search Bar -->
+<div class="search-bar">
+  <div class="search-container">
+    <input type="text" placeholder="Search for parts, brands, or categories...">
+    <button type="submit"><img src="magnifyingglass1.png"></button>
+  </div>
+</div>
+
+  <main class="cart-container">
+    <h2>My Cart</h2>
+
+    <div class="cart-card">
+      <div class="cart-product">
+      <a href="individualitem.html">
+        <img src="bmwairfilter.jpeg" alt="BMW Air Filter">
+        <div class="cart-details">
+          <h3>BMW Air Filter</h3>
+          <p>Price: AED 150</p></a>
+          <div class="qty-remove">
+            <label for="qty">Qty:</label>
+            <input type="number" id="qty" name="qty" min="1" value="1" />
+            <button class="remove-item">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <p><strong>Total:</strong> AED 150</p>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <div class="empty-cart hidden">
+      <p>Your cart is empty.</p>
+    </div>
+
+  </main>
+
+  <script>
+    const removeBtn = document.querySelector('.remove-item');
+    const cartCard = document.querySelector('.cart-card');
+    const emptyCart = document.querySelector('.empty-cart');
+
+    removeBtn.addEventListener('click', () => {
+      cartCard.classList.add('hidden');
+      emptyCart.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

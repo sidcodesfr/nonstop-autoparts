@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Profile | AutoParts</title>
+  <link rel="stylesheet" href="profile-style.css" />
+</head>
+<body>
+  <div class="profile-container">
+    <h1>Your Profile</h1>
+    <div id="profile-info">
+      <!-- User info will go here -->
+    </div>
+    <button id="logout-btn">Logout</button>
+  </div>
+
+  <script>
+    async function fetchProfile() {
+      try {
+        const response = await fetch('/api/profile');
+        if (response.status === 401) {
+          // Not logged in — redirect to login page
+          window.location.href = 'loginpagefinal.html';
+          return;
+        }
+
+        const data = await response.json();
+
+        if (data.error) {
+          alert('Error: ' + data.error);
+          return;
+        }
+
+        const profileDiv = document.getElementById('profile-info');
+        profileDiv.innerHTML = `
+          <p><strong>First Name:</strong> ${data.user_f_name}</p>
+          <p><strong>Last Name:</strong> ${data.user_l_name}</p>
+          <p><strong>Username:</strong> ${data.username}</p>
+          <p><strong>Role:</strong> ${data.role}</p>
+        `;
+      } catch (error) {
+        console.error('Failed to fetch profile:', error);
+        alert('Failed to load profile data. Please try again.');
+      }
+    }
+
+    document.getElementById('logout-btn').addEventListener('click', async () => {
+      await fetch('/auth/logout', { method: 'POST' });
+      window.location.href = 'loginpagefinal.html';
+    });
+
+    // On page load, fetch profile
+    window.onload = fetchProfile;
+  </script>
+</body>
+</html>

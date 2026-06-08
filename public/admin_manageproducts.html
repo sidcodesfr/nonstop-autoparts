@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Products | Admin Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      padding: 40px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .product-form {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    textarea,
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      
+    }
+
+    button[type="submit"] {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    button[type="reset"] {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #c82333;
+    }
+
+    @media (max-width: 600px) {
+      .form-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📦 List a New Product</h1>
+
+  <form class="product-form" action="/admin/upload-product" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="product_id">Product ID *</label>
+      <input type="text" id="product_id" name="product_id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="product_name">Product Name *</label>
+      <input type="text" id="product_name" name="product_name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="product_description">Description *</label>
+      <textarea id="product_description" name="product_description" rows=30 cols=50 required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="sku">SKU *</label>
+      <input type="text" id="sku" name="sku" required>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price (AED) *</label>
+      <input type="number" id="price" name="price" required min="0" step="0.01">
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category *</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="engine">Engine Parts</option>
+        <option value="brakes">Braking System</option>
+        <option value="suspension">Suspension & Steering</option>
+        <option value="electrical">Electrical Components</option>
+        <option value="accessories">Accessories</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="product_image">Upload Product Image</label>
+      <input type="file" id="product_image" name="product_image" accept="image/*">
+    </div>
+
+    <div class="form-group">
+      <label for="product_image">Upload Product Gallery Images</label>
+      <input type="file" id="product_image" name="product_image" accept="image/*">
+    </div>
+    
+    <div class="form-buttons">
+      <button type="submit"> Upload Product</button>
+      <button onClick="window.location.href='admin_dashboard.html'"> Go Back</button>
+      <button type="reset"> Clear All Fields</button>
+    </div>
+  </form>
+
+</body>
+</html>

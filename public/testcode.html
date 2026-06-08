@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Parts Showcase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eee;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin-bottom: 5px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      flex: 1 1 200px;
+      max-width: 220px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      max-height: 130px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .product-type {
+      font-size: 12px;
+      color: gray;
+      margin-bottom: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      background-color: #e53935;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn img {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Select Auto Parts By Make</h1>
+      <h2>Top Hot Deals</h2>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/kKyHdYJ.png" alt="Air Filter BMW">
+        <div class="product-type">FILTER</div>
+        <div class="product-name">Air Filter-BMW</div>
+        <a class="btn" href="#"><img src="https://i.imgur.com/g9cK7Qp.png" alt="Mail Icon"> Enquire Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/Mq6ECbg.png" alt="Wheel Cup Nissan">
+        <div class="product-type">STEERING WHEEL COVERS</div>
+        <div class="product-name">Wheel Cup-Nissan</div>
+        <a class="btn" href="#"><img src="https://i.imgur.com/g9cK7Qp.png" alt="Mail Icon"> Enquire Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/BmZxbTT.png" alt="Spark Plug Mercedes">
+        <div class="product-type">AUTOMOTIVE TOOLS & EQUIP...</div>
+        <div class="product-name">Spark Plug-Mercedes</div>
+        <a class="btn" href="#"><img src="https://i.imgur.com/g9cK7Qp.png" alt="Mail Icon"> Enquire Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/OdFHkNn.png" alt="Spark Plug Honda">
+        <div class="product-type">AUTOMOTIVE TOOLS & EQUIP...</div>
+        <div class="product-name">Spark Plug-Honda</div>
+        <a class="btn" href="#"><img src="https://i.imgur.com/g9cK7Qp.png" alt="Mail Icon"> Enquire Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.imgur.com/ogGDU4N.png" alt="Spark Plug Mitsubishi">
+        <div class="product-type">AUTOMOTIVE TOOLS & EQUIP...</div>
+        <div class="product-name">Spark Plug-Mitsubishi</div>
+        <a class="btn" href="#"><img src="https://i.imgur.com/g9cK7Qp.png" alt="Mail Icon"> Enquire Now</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
